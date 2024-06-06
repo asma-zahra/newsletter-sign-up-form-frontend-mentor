@@ -1,0 +1,173 @@
+/* ===================== */
+/* font */
+/* ===================== */
+
+@font-face { 
+    font-family: Roboto ;
+    src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+@font-face { 
+    font-family: Roboto-bold ;
+    src: url('./assets/fonts/Roboto-Bold.ttf');
+}
+/* ================================================= */
+/* CSS custom properties (variables) */
+/* ================================================= */
+:root{
+ /* colors */
+--tomato: hsl(4, 100%, 67%);
+--dark-slate-grey: hsl(234, 29%, 20%);
+--charcoal-grey: hsl(235, 18%, 26%);
+--grey: hsl(231, 7%, 60%);
+--white: hsl(0, 0%, 100%);
+
+/* font */
+--font-primary: Roboto;
+--font-bold: Roboto-bold;
+--ff-reg: 400;
+--ff-med: 700;
+--font-size-body:16px;
+}
+/* ================================================= */
+/* main Style Image and Typogarphy */
+/* ================================================= */
+*{
+    box-sizing: border-box;
+}
+html{
+    font-family: var(--font-primary), sans-serif;
+    font-size: var(--font-size-body);
+    font-weight: var(--ff-reg) ;
+    color: var(--dark-slate-grey);
+}
+body{
+    margin :0;
+    padding: 0;
+    /* for centring all block */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+#newsletter-container{
+    /* mobile column layout */
+flex-direction: column;
+background: var(--white);
+}
+article{
+     /* mobile need padding only in article layout */
+    padding-inline: 2rem;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+picture>img{
+    width: 100%;
+}
+ul{
+    /* margin:0; */
+    padding: 0; 
+    list-style: none;
+}
+li>img {
+    display: inline-block;
+    margin-right: 1rem;
+}
+li{
+    margin-bottom: 0.8rem;
+    /* to align icon image with li */
+    display: flex;
+    align-items: flex-start;
+}
+h1{
+    color: var(--dark-slate-grey);
+    font-size: 45px;
+    font-family: var(--font-bold);
+    font-weight: var(--ff-med);
+}
+form{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.label-inline{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 0.5rem;
+font-family: var(--font-bold);
+}
+
+input, button{
+    padding: 0.75rem 1.5rem;
+    font-family: inherit;
+    outline: none;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+input{
+    border: 1px solid var(--grey); 
+}
+small {
+    color: var(--tomato);
+    visibility: hidden;
+}
+button{
+    margin-top: 20px;
+    background-color: var(--dark-slate-grey);
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
+button:hover{
+    background-image: linear-gradient(to right, #ff65fa , rgb(203, 99, 19));
+}
+/* for Js */
+.hidden {
+    display: none;
+}
+
+@media (min-width: 760px) {
+    body {
+        /* to center the block horizontally  on large screen*/
+        justify-content: center;
+        background: var(--charcoal-grey);
+    }
+    main{
+        background: var(--white);
+        border-radius: 1.5rem;
+        padding: 1rem;
+        }
+    #newsletter-container{
+        /*/* for desktop, 2 column layout */  
+        max-width: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+        article{
+            margin-right: 1.5rem;
+        }
+     
+}
+
+#success-message {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    max-width: 400px;
+}
+
+.success-image {
+    width: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+
+
+.attribution { font-size: 11px; text-align: center; margin-top: 1rem; color: var(--tomato);}
+.attribution a { color: hsl(228, 45%, 44%); }
